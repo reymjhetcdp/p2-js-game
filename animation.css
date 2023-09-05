@@ -1,0 +1,222 @@
+@keyframes bounce {
+  20%,
+  50%,
+  80%,
+  to {
+    transform: scale(1, 1);
+  }
+  40%,
+  45% {
+    transform: scale(1.25, 0.65);
+  }
+  60% {
+    transform: scale(1.1, 0.75);
+  }
+  90% {
+    transform: scale(1.15, 0.85);
+  }
+}
+
+.gameTitle {
+  font-size: 1.3rem;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* character and enemy animation */
+/* first enemy */
+.enemy1 {
+  top: 0;
+  height: 48px;
+  width: calc(144px / 3);
+  position: absolute;
+  background-image: url('/assets/spritesheet/enemy1Spritesheet.png');
+  animation: enemyAnimate 0.5s steps(3) infinite;
+}
+
+@keyframes enemyAnimate {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 144px;
+  }
+}
+
+/* 2nd enemy */
+.enemy2 {
+  top: 50px;
+  height: 48px;
+  width: calc(144px / 3);
+  position: absolute;
+  background-image: url('/assets/spritesheet/enemy2Spritesheet.png');
+  animation: enemyAnimate 0.5s steps(3) infinite;
+}
+
+@keyframes enemyAnimate {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 144px;
+  }
+}
+
+/* player */
+
+.player {
+  bottom: 0;
+  left: 350px;
+  width: calc(144px / 3);
+  height: 58px;
+  background-image: url('/assets/spritesheet/playerSpritesheet.png');
+  position: absolute;
+  animation-name: playerIdle;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(3);
+}
+
+@keyframes playerIdle {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 144px;
+  }
+}
+
+@keyframes moveLeft {
+  from {
+    background-position-x: 0;
+    background-position-y: 58px;
+  }
+  to {
+    background-position-x: 144px;
+    background-position-y: 58px;
+  }
+}
+
+@keyframes moveRight {
+  from {
+    background-position-x: 0;
+    background-position-y: 116px;
+  }
+  to {
+    background-position-x: 144px;
+    background-position-y: 116px;
+  }
+}
+
+.explosion {
+  position: absolute;
+  height: 48px;
+  width: calc(384px / 8);
+  background: url('/assets/spritesheet/explosionSpritesheet.png');
+  animation-name: explosion;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(8);
+}
+
+@keyframes explosion {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 384px;
+  }
+}
+
+@keyframes popUp {
+  from {
+    height: 0px;
+    width: 0px;
+  }
+  to {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+.playerHit {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 325px;
+  left: 325px;
+  margin: auto;
+  animation-name: playerHit 0.2s forwards;
+  color: white;
+  font-size: 30px;
+}
+
+@keyframes playerHit {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* bg visual effects */
+
+.nebulaOneBg {
+  position: absolute;
+  height: 250px;
+  width: 220px;
+  left: 275px;
+  top: 300px;
+  animation: animateBg 2s infinite;
+}
+
+.nebulaTwoBg {
+  position: absolute;
+  width: 358px;
+  height: 250px;
+  top: 40px;
+  animation: animateBg 6s infinite;
+}
+
+.nebulaThreeBg {
+  position: absolute;
+  height: 400px;
+  width: 240px;
+  right: 25px;
+  animation: animateBg 4s infinite;
+}
+
+.starsOneBg {
+  position: absolute;
+  height: 750px;
+  width: 750px;
+  animation: animateBg 0.4s infinite;
+}
+
+.starsTwoBg {
+  position: absolute;
+  height: 750px;
+  width: 750px;
+  animation: animateBg 0.8s infinite;
+}
+
+@keyframes animateBg {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

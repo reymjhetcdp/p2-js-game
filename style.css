@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: url('/assets/galaxy.gif');
+  background-size: cover;
+  background-repeat: repeat;
+  color: white;
+}
+
+#gameContainer {
+  margin: auto;
+  height: 760px;
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.gameStart,
+.gameInstructions {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.gameStart:hover,
+.gameInstructions:hover {
+  background-color: rgba(0, 255, 0, 0.7);
+  transition: 0.3s;
+}
+
+.mainMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  font-size: 2rem;
+}
+
+.howToPlay {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 20px;
+  line-height: 2;
+  font-size: 10px;
+}
+
+.instructions {
+  background: #a020f0;
+  border: solid black 5px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.backButton,
+.quitGame,
+.restartGame,
+.popUpRetry,
+.popUpQuit {
+  margin-top: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.backButton:hover,
+.restartGame:hover,
+.quitGame:hover,
+.popUpQuit:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+  transition: 0.3s;
+}
+
+.popUpRetry:hover {
+  background-color: rgba(0, 255, 0, 0.7);
+  transition: 0.3s;
+}
+
+.gameArea {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gameStats {
+  height: 70px;
+  width: 750px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mainGame {
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 600px;
+  width: 750px;
+  background-color: #333;
+  position: relative;
+  background: url('/assets/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.playerBullet {
+  height: 34px;
+  width: 9px;
+  background: url('/assets/bullets/playerBullet.png');
+  position: absolute;
+}
+
+.popUpMessage {
+  border-radius: 20px;
+  background-color: white;
+  margin: auto;
+  height: 400px;
+  width: 400px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+  gap: 20px;
+  color: black;
+  animation: popUp 0.3s forwards;
+  animation-iteration-count: 1;
+}
+
+.planetBg1 {
+  z-index: -1;
+  position: absolute;
+  height: 250px;
+  width: 450px;
+  bottom: -80px;
+  left: 150px;
+  background: url('/assets/planet.png');
+  background-size: cover;
+}
+
+.planetBg2 {
+  z-index: -2;
+  position: absolute;
+  height: 350px;
+  width: 300px;
+  top: -100px;
+  right: 0px;
+  background: url('/assets/planet2.png');
+  background-size: cover;
+}
+
+.planetBg3 {
+  z-index: -2;
+  position: absolute;
+  height: 350px;
+  width: 350px;
+  top: -100px;
+  left: -20px;
+  background: url('/assets/planet3.png');
+  background-size: cover;
+}
+
+.insideGameButtons {
+  width: 750px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animation.css" />
+    <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
+  </head>
+  <body>
+    <div id="gameContainer">
+      <!-- main menu -->
+      <div class="mainMenu">
+        <p>COSMIC COMBAT:</p>
+        <p class="gameTitle">Starship Annihilation</p>
+        <button class="gameStart">Start Game</button>
+        <button class="gameInstructions">How to Play?</button>
+      </div>
+      <div class="howToPlay">
+        <h3>
+          COSMIC COMBAT: Starship Annihilation
+        </h3>
+        <h4>At any cost, we must defend our planet by thwarting the invasion of two distinct types of extraterrestrial life forms, one originating from an icy planet and the other from a blazing planet. Our mission is to eliminate their warships and ensure the safety of Earth. We must do whatever it takes to accomplish this goal.</h4>
+        <div class="instructions"><h2>INSTRUCTIONS</h2></div>
+        <h4>1. Move using the 'Arrow' or 'W A S D' keys.</h4>
+        <h4>2. Shoot bullets using the 'Spacebar'.</h4>
+        <h4>3. Enemies will appear randomly in pairs.</h4>
+        <h4>4. Each time you eliminate an enemy, your score will increase by 200.</h4>
+        <h4>
+          5. Colliding with an enemy will result in a loss of HP, so strive to survive for as long as possible!
+        </h4>
+        <button class="backButton">Back to Menu</button>
+      </div>
+      <!-- game area -->
+      <div class="gameArea">
+        <div class="gameStats">
+          <h4>HP: <span class="playerLives"> 100</span>%</h4>
+          <h4>Score: <span class="playerScore"></span></h4>
+          <h4>H.Score: <span class="playerHighScore"></span></h4>
+        </div>
+        <!-- game board -->
+        <div class="mainGame">
+          <img src="/assets/nebula_1.png" alt="cosmicCombatNebulaOneBackground" class="nebulaOneBg">
+          <img src="/assets/nebula_2.png" alt="cosmicCombatNebulaTwoBackground" class="nebulaTwoBg">
+          <img src="/assets/nebula_3.png" alt="cosmicCombatNebulaThreeBackground" class="nebulaThreeBg">
+          <img src="/assets/stars_1.png" alt="cosmicCombatStarsBackground" class="starsOneBg">
+          <img src="/assets/stars_2.png" alt="cosmicCombatStarsBackground" class="starsTwoBg">
+          <div class="planetBg1"></div>
+          <div class="planetBg2"></div>
+          <div class="planetBg3"></div>
+          <!-- 
+            ** divided into divs for spawnArea where enemies will spawn
+            ** player div for character movements inside the game board 
+            ** div for pop up message when you lose the game-->
+          <div id="spawnArea"></div>
+          <div class="player"></div>
+          <audio id="battleAudio" src="/assets/audio/battle.wav" type="audio/mpeg"></audio>
+          <audio id="bulletAudio" src="/assets/audio/Explosion17.wav" type="audio/mpeg"></audio>
+          <audio id="explosionAudio" src="/assets/audio/Explosion35.wav" type="audio/mpeg"></audio>
+          <audio id="collisionAudio" src="/assets/audio/Explosion55.wav" type="audio/mpeg"></audio>
+          <div class="popUpMessage">
+            <h5>Game Over!</h3>
+            <h3>Your ship was Destroyed!</h3>
+            <h4>Score: <span class="popUpScore"></span></h4>
+            <button class="popUpRetry">Retry?</button>
+            <button class="popUpQuit">Quit?</button>
+          </div>
+        </div>
+        <div class="insideGameButtons">
+          <button class="quitGame">Quit</button>
+          <button class="restartGame">Restart</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
